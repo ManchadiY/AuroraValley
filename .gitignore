@@ -1,0 +1,32 @@
+# ───────── Node / npm ─────────
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# ───────── Next.js build output ─────────
+.next/
+out/
+.next/cache/
+
+# ───────── Environment files ─────────
+.env
+
+
+# ───────── Logs & coverage ─────────
+*.log
+coverage/
+*.lcov
+
+# ───────── System files ─────────
+.DS_Store
+Thumbs.db
+
+# ───────── IDE / Editor settings ─────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ───────── Miscellaneous ─────────
+*.tgz
+*.tmp
