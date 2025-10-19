@@ -14,11 +14,11 @@ import { ReservationProvider } from "./_components/ReservationContext";
 
 export const metadata = {
   title: {
-    template: "%s / The Wild Oasis",
-    default: "Welcome / The Wild Oasis",
+    template: "%s / Aurora Valley",
+    default: "Welcome / Aurora Valley",
   },
   description:
-    "Luxurious cabin hotel, located in the heart of the Italian Dolomites, surrounded by beautiful mountains and dark forests",
+    "Luxurious cabin hotel, located in the heart of the India, surrounded by beautiful mountains and dark forests",
 };
 
 export default function RootLayout({ children }) {
@@ -29,8 +29,8 @@ export default function RootLayout({ children }) {
       >
         <Header />
 
-        <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">
+        <div className="flex-1 px-4 md:px-8 py-4 lg:py-12 grid">
+          <main className="md:max-w-7xl mx-auto w-full">
             <ReservationProvider>{children}</ReservationProvider>
           </main>
         </div>

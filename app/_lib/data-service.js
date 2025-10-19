@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
 
-/////////////
 // GET
 
 export async function getCabin(id) {
@@ -22,6 +21,20 @@ export async function getCabin(id) {
 
   return data;
 }
+
+export async function uploadCabins(cabins) {
+  const { data, error } = await supabase
+    .from("cabins") // your table name
+    .insert(cabins); // array of objects
+
+  if (error) {
+    console.error("Insert failed:", error);
+    throw error;
+  }
+  console.log("Inserted rows:", data);
+}
+
+// uploadCabins(cabins);
 
 export async function getCabinPrice(id) {
   const { data, error } = await supabase

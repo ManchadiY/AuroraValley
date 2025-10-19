@@ -24,8 +24,8 @@ function ReservationCard({ booking, onDelete }) {
   } = booking;
 
   return (
-    <div className="flex border border-primary-800">
-      <div className="relative h-32 aspect-square">
+    <div className="flex flex-col md:flex-row border border-primary-800">
+      <div className="relative h-24 md:h-32 aspect-square">
         <Image
           src={image}
           alt={`Cabin ${name}`}
@@ -34,9 +34,9 @@ function ReservationCard({ booking, onDelete }) {
         />
       </div>
 
-      <div className="flex-grow px-6 py-3 flex flex-col">
+      <div className="flex-grow px-1 md:px-6 py-3 flex flex-col">
         <div className="flex items-center justify-between">
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-lg lg:text-xl font-semibold">
             {numNights} nights in Cabin {name}
           </h3>
           {isPast(new Date(startDate)) ? (
@@ -50,7 +50,7 @@ function ReservationCard({ booking, onDelete }) {
           )}
         </div>
 
-        <p className="text-lg text-primary-300">
+        <p className="text-sm lg:text-lg text-primary-300">
           {format(new Date(startDate), "EEE, MMM dd yyyy")} (
           {isToday(new Date(startDate))
             ? "Today"
@@ -58,8 +58,10 @@ function ReservationCard({ booking, onDelete }) {
           ) &mdash; {format(new Date(endDate), "EEE, MMM dd yyyy")}
         </p>
 
-        <div className="flex gap-5 mt-auto items-baseline">
-          <p className="text-xl font-semibold text-accent-400">${totalPrice}</p>
+        <div className="flex gap-2 md:gap-5 mt-auto items-baseline">
+          <p className="text-lg lg:text-xl font-semibold text-accent-400">
+            Rs{totalPrice}
+          </p>
           <p className="text-primary-300">&bull;</p>
           <p className="text-lg text-primary-300">
             {numGuests} guest{numGuests > 1 && "s"}

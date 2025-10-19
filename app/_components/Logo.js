@@ -11,10 +11,10 @@ function Logo() {
         height="60"
         quality={100}
         width="60"
-        alt="The Wild Oasis logo"
+        alt="The Aurora Valley logo"
       />
-      <span className="text-xl font-semibold text-primary-100">
-        The Wild Oasis
+      <span className="text-lg md:text-xl font-semibold text-primary-100">
+        Aurora Valley
       </span>
     </Link>
   );
