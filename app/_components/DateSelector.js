@@ -13,21 +13,26 @@ import { useMediaQuery } from "react-responsive";
 
 function isAlreadyBooked(range, datesArr) {
   return (
-    range.from &&
-    range.to &&
-    datesArr.some((date) =>
+    range?.from &&
+    range?.to &&
+    datesArr?.some((date) =>
       isWithinInterval(date, { start: range.from, end: range.to })
     )
   );
 }
 
 function DateSelector({ settings, cabin, bookedDates }) {
+  console.log(settings, cabin, bookedDates);
+
   const { range, setRange, resetRange } = useReservation();
 
   const displayRange = isAlreadyBooked(range, bookedDates) ? {} : range;
 
   const { regularPrice, discount } = cabin;
-  const numNights = differenceInDays(displayRange.to, displayRange.from);
+  const numNights =
+    displayRange?.from && displayRange?.to
+      ? differenceInDays(displayRange.to, displayRange.from)
+      : 0;
   const cabinPrice = numNights * (regularPrice - discount);
 
   const { minBookingLength, maxBookingLength } = settings;
@@ -88,7 +93,7 @@ function DateSelector({ settings, cabin, bookedDates }) {
           ) : null}
         </div>
 
-        {range.from || range.to ? (
+        {range?.from || range?.to ? (
           <button
             className="border border-primary-800  px-2 md:py-2 md:px-4 text-sm font-semibold"
             onClick={resetRange}

@@ -7,8 +7,9 @@ function Cabin({ cabin }) {
     cabin;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-[3fr_4fr] gap-4 md:gap-20 border border-primary-800 px-6 md:py-3 md:px-10 md:mb-24">
-      <div className="relative scale-[1.15] -translate-x-3">
+    <div className="overflow-hidden grid grid-cols-1 md:grid-cols-[3fr_4fr] gap-4 md:gap-20 border border-primary-800 px-3 md:py-3 md:px-10 md:mb-24">
+      {/* <div className="grid grid-cols-2 md:grid-cols-[3fr_4fr] gap-4 md:gap-20 border border-primary-800 px-6 md:py-3 md:px-10 md:mb-24"> */}
+      <div className="mt-4 md:mt-0 relative h-64 md:h-auto  md:scale-[1.15] md:-translate-x-3">
         <Image
           src={image}
           fill
@@ -18,7 +19,7 @@ function Cabin({ cabin }) {
       </div>
 
       <div>
-        <h3 className="text-accent-100 font-black text-4xl md:text-7xl mb-5 translate-x-[-154px] md:translate-x-[-254px] bg-primary-950 md:p-6 pb-1 md:w-[150%]">
+        <h3 className="text-accent-100 font-black text-4xl md:text-7xl mb-5  md:translate-x-[-254px] bg-primary-950 md:p-6 pb-1 md:w-[150%]">
           Cabin {name}
         </h3>
 
